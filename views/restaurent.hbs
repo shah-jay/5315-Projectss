@@ -1,0 +1,32 @@
+<title>{{title}}</title>
+<h1>{{title}}</h1>
+<table>
+    <thead>
+        <tr>
+            <th>restaurant ID</th>
+            <th>Name</th>
+            <th>Borough</th>
+            <th>Cuisine</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {{#each data}}
+        
+        <tr>
+            <td>{{this.restaurant_id}}</td>
+            <td>{{this.name}}</td>
+            <td>{{this.borough}}</td>
+            <td>{{this.cuisine}}</td>
+            <td>
+            <button onclick="updateRestaurant('{{this.restaurant_id}}')">Update</button>
+        </td>
+        <td>
+            <button><a href="/api/restaurants/{{this.restaurant_id}}" data-method="DELETE">Delete</a></button>
+        </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
